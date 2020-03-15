@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 3333",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "http": "npx http-server dist/ng8demo -g --proxy http://localhost:8080?",

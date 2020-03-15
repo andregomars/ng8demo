@@ -11,7 +11,10 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('here the home init')
+    setTimeout(() => {
+      console.log('here the home init')
+      this.title = `Static Ng9 delays ${this.delay}ms`;
+    }, this.delay
   }
 
 }
