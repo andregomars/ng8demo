@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.asyncLoad();
+    this.syncLoad();
   }
 
   private asyncLoad() {
