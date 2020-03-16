@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   title = 'ng8demo';
-  delay = 300;
+  delay = 1000;
 
   constructor() { }
 
