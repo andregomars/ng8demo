@@ -1,13 +1,4 @@
-/* 
- * -- LinkService --        [Temporary]
- * @MarkPieszak
- * 
- * Similar to Meta service but made to handle <link> creation for SEO purposes
- * -- NOTE: Soon there will be an overall DocumentService within Angular that handles Meta/Link everything
- */
-
-import { Injectable, Optional, RendererFactory2, ViewEncapsulation, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Injectable, RendererFactory2, ViewEncapsulation } from '@angular/core';
 
 @Injectable({
     providedIn: 'root',
@@ -16,7 +7,6 @@ export class LinkService {
 
     constructor(
         private rendererFactory: RendererFactory2,
-        @Inject(DOCUMENT) private document
     ) {
     }
 
@@ -26,7 +16,7 @@ export class LinkService {
     addTag(tag: LinkDefinition, forceCreation?: boolean) {
 
         try {
-            const renderer = this.rendererFactory.createRenderer(this.document, {
+            const renderer = this.rendererFactory.createRenderer(document, {
                 id: '-1',
                 encapsulation: ViewEncapsulation.None,
                 styles: [],
@@ -34,7 +24,7 @@ export class LinkService {
             });
 
             const link = renderer.createElement('link');
-            const head = this.document.head;
+            const head = document.head;
             const selector = this._parseSelector(tag);
 
             if (head === null) {
@@ -59,8 +49,8 @@ export class LinkService {
      */
     public updateTag(tag: LinkDefinition): void {
         const selector = this._parseSelector(tag);
-        const linkElement = <HTMLLinkElement> this.document.head.querySelector(selector)
-            || this.document.head.appendChild(this.document.createElement('link'));
+        const linkElement = document.head.querySelector(selector) as HTMLLinkElement
+            || document.head.appendChild(document.createElement('link'));
 
         if (linkElement) {
             Object.keys(tag).forEach((prop: string) => {
@@ -75,10 +65,10 @@ export class LinkService {
      */
     public removeTag(tag: LinkDefinition): void {
         const selector = this._parseSelector(tag);
-        const linkElement = <HTMLLinkElement> this.document.head.querySelector(selector);
+        const linkElement = document.head.querySelector(selector) as HTMLLinkElement;
 
         if (linkElement) {
-            this.document.head.removeChild(linkElement);
+            document.head.removeChild(linkElement);
         }
     }
 
@@ -90,7 +80,7 @@ export class LinkService {
     public getTag(tag: LinkDefinition): HTMLLinkElement {
         const selector = this._parseSelector(tag);
 
-        return this.document.head.querySelector(selector);
+        return document.head.querySelector(selector);
     }
 
     /**
@@ -98,7 +88,7 @@ export class LinkService {
      * @return {NodeListOf<HTMLLinkElement>}
      */
     public getTags(): NodeListOf<HTMLLinkElement> {
-        return this.document.head.querySelectorAll('link');
+        return document.head.querySelectorAll('link');
     }
 
     /**
