@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, of, BehaviorSubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -7,19 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   title = 'Regular Ng8';
-  delay = 3000;
+  show$ = new BehaviorSubject<boolean>(false);
 
   constructor() { }
 
   ngOnInit() {
-    // setTimeout(() => {
-    //   console.log('here the home init')
-    //   this.title = `Regular Ng8 delays ${this.delay}ms`;
-    // }, this.delay);
+    this.asyncLoad();
+  }
 
-    const end = Date.now() + this.delay;
+  private asyncLoad() {
+    setTimeout(() => {
+      console.log('async')
+      this.loadContent();
+    }, environment.delay);
+  }
+
+  private syncLoad() {
+    const end = Date.now() + environment.delay;
     while (Date.now() < end) continue
-    this.title = `Regular Ng8 delays ${this.delay}ms`;
+    this.loadContent();
+  }
+
+  private loadContent() {
+    this.title = `Regular Ng8 delays ${environment.delay}ms`;
+    this.show$.next(true);
   }
 
 }
