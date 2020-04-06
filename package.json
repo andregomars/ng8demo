@@ -9,7 +9,7 @@
     "http": "npx http-server dist/ng8demo -g -c --proxy http://localhost:8080?",
     "deploy": "ng deploy --base-href=/ng8demo/",
     "analyze": "ng build --prod --stats-json",
-    "postanalyze": "npx webpack-bundle-analyzer dist/ng8demo/stats-es2015.json",
+    "postanalyze": "npx webpack-bundle-analyzer dist/ng8demo/stats-es2015.json --port 8889",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
