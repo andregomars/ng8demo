@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CheckForUpdateService } from './services/check-for-update.service';
 import { UpdateService } from './services/update.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { UpdateService } from './services/update.service';
 })
 export class AppComponent {
   constructor(
+    private checkForUpdateService: CheckForUpdateService,
     private updateService: UpdateService
     ) { }
 }
