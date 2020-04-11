@@ -9,7 +9,7 @@ export class UpdateService {
   constructor(private swUpdate: SwUpdate) {
     this.swUpdate.available.subscribe(evt => {
       // an update is available, add some logic here.
-      console.warn('new version is available');
+      console.warn(`new version ${evt.available.hash} is available`);
       this.swUpdate.activateUpdate().then(() =>
         document.location.reload()
       );
