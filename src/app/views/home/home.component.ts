@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
 
   private asyncLoad() {
     setTimeout(() => {
-      console.log('async')
       this.loadContent();
     }, environment.delay);
   }
