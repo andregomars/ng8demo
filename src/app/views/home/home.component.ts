@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  title = 'Regular Ng8 xxx';
+  title = 'Regular Ng8';
   show$ = new BehaviorSubject<boolean>(false);
 
   constructor() { }

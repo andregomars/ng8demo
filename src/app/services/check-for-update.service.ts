@@ -13,7 +13,10 @@ export class CheckForUpdateService {
     const versionPollInterval$ = interval(10 * 1000);
     const pollOnceAppIsStable$ = concat(appIsStable$, versionPollInterval$);
 
-    pollOnceAppIsStable$.subscribe(() => this.swUpdate.checkForUpdate());
-
+    // pollOnceAppIsStable$.subscribe(() => this.swUpdate.checkForUpdate());
+    pollOnceAppIsStable$.subscribe(() => {
+      console.warn(`start version check in 10 seconds`);
+      this.swUpdate.checkForUpdate();
+    });
   }
 }
