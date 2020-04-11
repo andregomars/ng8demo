@@ -14,7 +14,9 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.syncLoad();
+    // this.syncLoad();
+    this.title = `Regular Ng8 delays ${environment.delay}ms`;
+    this.show$.next(true);
   }
 
   private asyncLoad() {
@@ -26,7 +28,7 @@ export class HomeComponent implements OnInit {
 
   private syncLoad() {
     const end = Date.now() + environment.delay;
-    while (Date.now() < end) continue
+    while (Date.now() < end) { continue; }
     this.loadContent();
   }
 
