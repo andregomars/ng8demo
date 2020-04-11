@@ -97,6 +97,9 @@ MIT
 @angular/router
 MIT
 
+@angular/service-worker
+MIT
+
 @tweenjs/tween.js
 MIT
 The MIT License
