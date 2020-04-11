@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     // this.syncLoad();
-    this.title = `Regular Ng8 delays ${environment.delay}ms`;
     this.show$.next(true);
   }
 
