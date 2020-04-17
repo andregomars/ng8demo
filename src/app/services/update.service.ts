@@ -7,6 +7,8 @@ import { SwUpdate } from '@angular/service-worker';
 })
 export class UpdateService {
   constructor(private swUpdate: SwUpdate) {
+    if (!swUpdate.isEnabled) { return; }
+
     this.swUpdate.available.subscribe(evt => {
       // an update is available, add some logic here.
       console.warn(`new version ${evt.available.hash} is available`);
