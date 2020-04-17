@@ -18,7 +18,8 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: false }),
   ],
   providers: [
     // { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
