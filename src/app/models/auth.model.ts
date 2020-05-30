@@ -4,5 +4,6 @@ export interface AuthStateModel {
 }
 
 export interface LoginInfo { 
-    username: string; password: string
+    username: string;
+    password: string
 }
