@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'virtualscroll', loadChildren: () => import('./views/virtualscroll/virtualscroll.module').then(m => m.VirtualScrollModule) },
   { path: 'cdkscroll', loadChildren: () => import('./views/cdkscroll/cdkscroll.module').then(m => m.CdkScrollModule) },
   { path: 'notfound', loadChildren: () => import('./views/not-found/not-found.module').then(m => m.NotFoundModule) },
+  { path: 'signin', loadChildren: () => import('./views/signin/signin.module').then(m => m.SigninModule) },
   { path: '**', redirectTo: '/notfound', pathMatch: 'full' },
 ];
 
