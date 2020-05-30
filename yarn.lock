@@ -1010,6 +1010,20 @@
     tree-kill "1.2.2"
     webpack-sources "1.4.3"
 
+"@ngxs/storage-plugin@^3.6.2":
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/@ngxs/storage-plugin/-/storage-plugin-3.6.2.tgz#6fe2168891382c635406df02308f67b585efc60a"
+  integrity sha512-x9CATYmXDH9bWmKW4uQxt5xxb51naSAmMkhvv1QHIrE9hG4uYNqiV3ERAM1wZvZbu2MJB9iXEN0cBziTgrwe2Q==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/store@^3.6.2":
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.6.2.tgz#cfba63dc1e5bd422e89e54b3332cd69818510624"
+  integrity sha512-al7GU618SAuz2Ul4rFYVDgS1DM0gHReGOGvbnE7LBt4Etz3gsJERNYXPp2bSA7lZGaRPRaFfIHJN+Lm/GikFJw==
+  dependencies:
+    tslib "^1.9.0"
+
 "@schematics/angular@8.3.25":
   version "8.3.25"
   resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-8.3.25.tgz#11252399e30e2ddb94323e5e438bb69839fb9464"
