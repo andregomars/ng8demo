@@ -48,6 +48,7 @@ export class AuthState {
           token: null,
           username: null
         });
+        // localStorage.removeItem('auth.token');
       })
     );
   }

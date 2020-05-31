@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Login, Logout } from 'src/app/actions/auth.actions';
 import { LoginInfo } from 'src/app/models/auth.model';
@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss']
+  styleUrls: ['./signin.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush 
 })
 export class SigninComponent implements OnInit {
   username: string;
